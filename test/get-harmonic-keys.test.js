@@ -15,7 +15,7 @@ describe("getHarmonicKeys", function() {
         { camelotPosition: 9, mode: 0, name: "Em", pitchClass: 4 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 },
         { camelotPosition: 10, mode: 0, name: "Bm", pitchClass: 11 },
-        { camelotPosition: 3, mode: 1, name: "Db", pitchClass: 1 }
+        { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 }
       ]);
     });
   });

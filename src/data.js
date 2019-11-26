@@ -69,18 +69,18 @@ const harmonicKeys = {
   Gb: [Gb, B, Db, Ebm],
   G: [G, C, D, Em],
 
-  Abm: [Abm, Dbm, Ebm, F],
-  Am: [Am, Dm, Em, Gb],
-  Bbm: [Bbm, Ebm, Fm, G],
-  Bm: [Bm, Em, Gbm, Ab],
-  Cm: [Cm, Fm, Gm, A],
-  Dbm: [Dbm, Gbm, Abm, Bb],
-  Dm: [Dm, Gm, Am, B],
-  Ebm: [Ebm, Abm, Bbm, C],
-  Em: [Em, Am, Bm, Db],
-  Fm: [Fm, Bbm, Cm, D],
-  Gbm: [Gbm, Bm, Dbm, Eb],
-  Gm: [Gm, Cm, Dm, E]
+  Abm: [Abm, Dbm, Ebm, B],
+  Am: [Am, Dm, Em, C],
+  Bbm: [Bbm, Ebm, Fm, Dbm],
+  Bm: [Bm, Em, Gbm, D],
+  Cm: [Cm, Fm, Gm, Eb],
+  Dbm: [Dbm, Gbm, Abm, E],
+  Dm: [Dm, Gm, Am, F],
+  Ebm: [Ebm, Abm, Bbm, Gbm],
+  Em: [Em, Am, Bm, G],
+  Fm: [Fm, Bbm, Cm, Abm],
+  Gbm: [Gbm, Bm, Dbm, A],
+  Gm: [Gm, Cm, Dm, Bbm]
 };
 
 module.exports = {
