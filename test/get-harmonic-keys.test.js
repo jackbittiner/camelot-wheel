@@ -4,7 +4,7 @@ describe("getHarmonicKeys", function() {
   describe("getHarmonicKeysByPitchClassAndMode", function() {
     it("should return the key details from the pitch class and mode", function() {
       const getHarmonicKeysByPitchClassAndMode =
-        getHarmonicKeys.getHarmonicKeysByPitchClassAndMode;
+        getHarmonicKeys.getHarmonicKeys;
       expect(getHarmonicKeysByPitchClassAndMode(0, 1)).toEqual([
         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
