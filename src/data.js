@@ -55,6 +55,35 @@ const allKeys = [
   Bm
 ];
 
+const harmonicKeys = {
+  Ab: [Ab, Db, Eb, Fm],
+  A: [A, D, E, Gbm],
+  Bb: [Bb, Eb, F, Gm],
+  B: [B, E, Gb, Abm],
+  C: [C, F, G, Am],
+  Db: [Db, Gb, Ab, Bbm],
+  D: [D, G, A, Bm],
+  Eb: [Eb, Ab, Bb, Cm],
+  E: [E, A, B, Dbm],
+  F: [F, Bb, C, Dm],
+  Gb: [Gb, B, Db, Ebm],
+  G: [G, C, D, Em],
+
+  Abm: [Abm, Dbm, Ebm, F],
+  Am: [Am, Dm, Em, Gb],
+  Bbm: [Bbm, Ebm, Fm, G],
+  Bm: [Bm, Em, Gbm, Ab],
+  Cm: [Cm, Fm, Gm, A],
+  Dbm: [Dbm, Gbm, Abm, Bb],
+  Dm: [Dm, Gm, Am, B],
+  Ebm: [Ebm, Abm, Bbm, C],
+  Em: [Em, Am, Bm, Db],
+  Fm: [Fm, Bbm, Cm, D],
+  Gbm: [Gbm, Bm, Dbm, Eb],
+  Gm: [Gm, Cm, Dm, E]
+};
+
 module.exports = {
-  allKeys
+  allKeys,
+  harmonicKeys
 };

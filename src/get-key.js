@@ -12,7 +12,6 @@ const getKeyByCamelotPositionAndMode = (camelotPosition, mode) => {
   const keyResponse = allKeys.find(key => {
     return key.camelotPosition === camelotPosition && key.mode === mode;
   });
-  console.log(keyResponse);
   return keyResponse;
 };
 
