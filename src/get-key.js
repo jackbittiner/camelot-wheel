@@ -8,6 +8,15 @@ const getKeyByPitchClassAndMode = (pitchClass, mode) => {
   return keyResponse;
 };
 
+const getKeyByCamelotPositionAndMode = (camelotPosition, mode) => {
+  const keyResponse = allKeys.find(key => {
+    return key.camelotPosition === camelotPosition && key.mode === mode;
+  });
+  console.log(keyResponse);
+  return keyResponse;
+};
+
 module.exports = {
-  getKeyByPitchClassAndMode
+  getKeyByPitchClassAndMode,
+  getKeyByCamelotPositionAndMode
 };

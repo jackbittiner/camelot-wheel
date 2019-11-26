@@ -18,4 +18,22 @@ describe("getKey", function() {
       });
     });
   });
+  describe("getKeyByCamelotPositionAndMode", function() {
+    it("should return the key details from the pitch class and mode", function() {
+      const getKeyByCamelotPositionAndMode =
+        getKey.getKeyByCamelotPositionAndMode;
+      expect(getKeyByCamelotPositionAndMode(1, 1)).toEqual({
+        name: "B",
+        pitchClass: 11,
+        mode: 1,
+        camelotPosition: 1
+      });
+      expect(getKeyByCamelotPositionAndMode(4, 0)).toEqual({
+        name: "Fm",
+        pitchClass: 5,
+        mode: 0,
+        camelotPosition: 4
+      });
+    });
+  });
 });

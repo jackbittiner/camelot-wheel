@@ -1,5 +1,6 @@
 const getKey = require("./src/get-key");
 
 module.exports = {
-  getKeyByPitchClassAndMode: getKey.getKeyByPitchClassAndMode()
+  getKeyByPitchClassAndMode: getKey.getKeyByPitchClassAndMode(),
+  getKeyByCamelotPositionAndMode: getKey.getKeyByCamelotPositionAndMode()
 };
