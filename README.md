@@ -49,20 +49,20 @@ It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys b
 ##### getKeyByPitchClassAndMode(pitchClass, mode);
 
 ```javascript
-e.g.getKeyByPitchClassAndMode(0, 1); // ==> C  (major)
+getKeyByPitchClassAndMode(0, 1); // ==> C  (major)
 getKeyByPitchClassAndMode(0, 0); // ==> Cm (minor)
 ```
 
 ##### getKeyByCamelotPositionAndMode(camelotPosition, mode);
 
 ```javascript
-e.g.getKeyByCamelotPositionAndMode(8, 1); // => C (major)
+getKeyByCamelotPositionAndMode(8, 1); // => C (major)
 ```
 
 ##### getHarmonicKeys(pitchClass, mode);
 
 ```javascript
-e.g.getHarmonicKeys(0, 1);
+getHarmonicKeys(0, 1);
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
@@ -74,7 +74,7 @@ e.g.getHarmonicKeys(0, 1);
 ##### getCamelotRoute(startKey, targetKey);
 
 ```javascript
-e.g.getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
+getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
 // => [
 //      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
 //      { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
