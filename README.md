@@ -63,10 +63,12 @@ e.g.getKeyByCamelotPositionAndMode(8, 1); // => C (major)
 
 ```javascript
 e.g.getHarmonicKeys(0, 1);
-// => [{ camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
-//    { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
-//    { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
-//    { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }]
+// =>    [
+//         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
+//         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
+//         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
+//         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
+//       ]
 ```
 
 ##### getCamelotRoute(startKey, targetKey);
