@@ -35,6 +35,51 @@ Now what is going on here?
 - A track's key is considered compatible with another if it's positioned next to it or opposite it.
 - For example the key of C (1d) is compatible with F (12d), G (2d) and Am (1m)
 
+### API
+
+getKeyByPitchClassAndMode
+getKeyByCamelotPositionAndMode
+getHarmonicKeys
+getCamelotRoute
+
+### API
+
+It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys by position in the camelot wheel, get keys by pitch class and mode, get harmonically related keys, and get a suggested route through harmonically related keys, from key A to key B.
+
+##### getKeyByPitchClassAndMode(pitchClass, mode);
+
+```javascript
+e.g.getKeyByPitchClassAndMode(0, 1); // ==> C  (major)
+getKeyByPitchClassAndMode(0, 0); // ==> Cm (minor)
+```
+
+##### getKeyByCamelotPositionAndMode(camelotPosition, mode);
+
+```javascript
+e.g.getKeyByCamelotPositionAndMode(8, 1); // => C (major)
+```
+
+##### getHarmonicKeys(pitchClass, mode);
+
+```javascript
+e.g.getHarmonicKeys(0, 1);
+// => [{ camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
+//    { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
+//    { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
+//    { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }]
+```
+
+##### getCamelotRoute(startKey, targetKey);
+
+```javascript
+e.g.getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
+// => [
+//      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
+//      { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
+//      { name: "D", pitchClass: 2, mode: 1, camelotPosition: 10 }
+//    ]
+```
+
 ### Run the Tests
 
 ```
