@@ -1,0 +1,23 @@
+{
+  "name": "camelot-wheel",
+  "version": "0.1.0",
+  "description": "A package to help with logic regarding the camelot wheel / circle of fifths",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "camelot",
+    "wheel",
+    "circle",
+    "of",
+    "fiths",
+    "npm",
+    "node"
+  ],
+  "author": "Jack Bittiner",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
