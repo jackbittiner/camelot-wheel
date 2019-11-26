@@ -1,4 +1,4 @@
-# Camelot-Wheel https://badge.fury.io/js/camelot-wheel.svg
+# Camelot-Wheel [![npm version](https://badge.fury.io/js/camelot-wheel.svg)](https://badge.fury.io/js/camelot-wheel)
 
 A package to allow for easy use of logic related the Circle of Fifths or 'Camelot Wheel'.
 
