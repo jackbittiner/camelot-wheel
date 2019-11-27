@@ -1,5 +1,11 @@
-const CamelotWheel = require("./data.js");
+const CamelotWheel = require('./data.js');
 const allKeys = CamelotWheel.allKeys;
+
+const getKeyByName = name => {
+  return allKeys.find(key => {
+    return key.name === name;
+  });
+};
 
 const getKeyByPitchClassAndMode = (pitchClass, mode) => {
   const keyResponse = allKeys.find(key => {
@@ -16,6 +22,7 @@ const getKeyByCamelotPositionAndMode = (camelotPosition, mode) => {
 };
 
 module.exports = {
+  getKeyByName,
   getKeyByPitchClassAndMode,
   getKeyByCamelotPositionAndMode
 };
