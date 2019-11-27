@@ -37,6 +37,7 @@ Now what is going on here?
 
 ### API
 
+- getKeyByName
 - getKeyByPitchClassAndMode
 - getKeyByCamelotPositionAndMode
 - getHarmonicKeys
@@ -44,20 +45,27 @@ Now what is going on here?
 
 It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys by position in the camelot wheel, get keys by pitch class and mode, get harmonically related keys, and get a suggested route through harmonically related keys, from key A to key B.
 
-##### getKeyByPitchClassAndMode(pitchClass, mode);
+##### getKeyByName(name)
 
 ```javascript
-getKeyByPitchClassAndMode(0, 1); // ==> C  (major)
-getKeyByPitchClassAndMode(0, 0); // ==> Cm (minor)
+getKeyByName('B'); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
+getKeyByName('Fm'); // ==> { name: "Fm", pitchClass: 5, mode: 0, camelotPosition: 4 }
 ```
 
-##### getKeyByCamelotPositionAndMode(camelotPosition, mode);
+##### getKeyByPitchClassAndMode(pitchClass, mode)
 
 ```javascript
-getKeyByCamelotPositionAndMode(8, 1); // => C (major)
+getKeyByPitchClassAndMode(0, 1); // ==> { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
+getKeyByPitchClassAndMode(0, 0); // ==> { name: "Cm", pitchClass: 0, mode: 0, camelotPosition: 5 }
 ```
 
-##### getHarmonicKeys(pitchClass, mode);
+##### getKeyByCamelotPositionAndMode(camelotPosition, mode)
+
+```javascript
+getKeyByCamelotPositionAndMode(8, 1); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
+```
+
+##### getHarmonicKeys(pitchClass, mode)
 
 ```javascript
 getHarmonicKeys(0, 1);
@@ -69,7 +77,7 @@ getHarmonicKeys(0, 1);
 //       ]
 ```
 
-##### getCamelotRoute(startKey, targetKey);
+##### getCamelotRoute(startKey, targetKey)
 
 ```javascript
 getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
