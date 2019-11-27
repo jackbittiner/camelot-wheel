@@ -12,18 +12,6 @@ In lay terms: The Circle of Fifths is a music theory diagram for finding the key
 
 `npm i camelot-wheel`
 
-## How does it work?
-
-We use the spotify API to get the track features for a song. The most important information we use is the tempo, the key and the mode.
-
-- Tempo is the speed of the track in beats per minute (BPM)
-- Key is the group of pitches and scale of the composition. Integers represent each key. For example C = 0, C# = 1, D = 2 etc.
-- Mode is whether it is in the minor or Major key. 1 = Major. 0 = Minor
-
-We then ask Spotify for a list of recommendations based on this information.
-
-This is where the Camelot Wheel comes in.
-
 ### The Camelot Wheel
 
 ![camelot-wheel](./assets/camelotwheel.png)
@@ -48,13 +36,17 @@ It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys b
 ##### getKeyByName(name)
 
 ```javascript
-getKeyByName('B'); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
-getKeyByName('Fm'); // ==> { name: "Fm", pitchClass: 5, mode: 0, camelotPosition: 4 }
+import { getKeyByName } from "camelot-wheel";
+
+getKeyByName("B"); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
+getKeyByName("Fm"); // ==> { name: "Fm", pitchClass: 5, mode: 0, camelotPosition: 4 }
 ```
 
 ##### getKeyByPitchClassAndMode(pitchClass, mode)
 
 ```javascript
+import { getKgetKeyByPitchClassAndModeeyByName } from "camelot-wheel";
+
 getKeyByPitchClassAndMode(0, 1); // ==> { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 getKeyByPitchClassAndMode(0, 0); // ==> { name: "Cm", pitchClass: 0, mode: 0, camelotPosition: 5 }
 ```
@@ -62,12 +54,16 @@ getKeyByPitchClassAndMode(0, 0); // ==> { name: "Cm", pitchClass: 0, mode: 0, ca
 ##### getKeyByCamelotPositionAndMode(camelotPosition, mode)
 
 ```javascript
+import { getKeyByCamelotPositionAndMode } from "camelot-wheel";
+
 getKeyByCamelotPositionAndMode(8, 1); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 ```
 
 ##### getHarmonicKeys(pitchClass, mode)
 
 ```javascript
+import { getHarmonicKeys } from "camelot-wheel";
+
 getHarmonicKeys(0, 1);
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
@@ -80,6 +76,8 @@ getHarmonicKeys(0, 1);
 ##### getCamelotRoute(startKey, targetKey)
 
 ```javascript
+import { getCamelotRoute } from "camelot-wheel";
+
 getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
 // => [
 //      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
