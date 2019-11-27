@@ -37,12 +37,10 @@ Now what is going on here?
 
 ### API
 
-getKeyByPitchClassAndMode
-getKeyByCamelotPositionAndMode
-getHarmonicKeys
-getCamelotRoute
-
-### API
+- getKeyByPitchClassAndMode
+- getKeyByCamelotPositionAndMode
+- getHarmonicKeys
+- getCamelotRoute
 
 It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys by position in the camelot wheel, get keys by pitch class and mode, get harmonically related keys, and get a suggested route through harmonically related keys, from key A to key B.
 
