@@ -13,7 +13,13 @@ const getHarmonicKeysByName = name => {
   return harmonicKeys[keyName.name];
 };
 
+const getHarmonicKeysByCamelotPositionAndMode = (camelotPosition, mode) => {
+  const keyName = getKey({ camelotPosition, mode });
+  return harmonicKeys[keyName.name];
+};
+
 module.exports = {
   getHarmonicKeysByPitchClassAndMode,
-  getHarmonicKeysByName
+  getHarmonicKeysByName,
+  getHarmonicKeysByCamelotPositionAndMode
 };
