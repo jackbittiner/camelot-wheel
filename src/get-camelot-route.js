@@ -1,17 +1,16 @@
-const getKey = require("./get-key");
-const getKeyByCamelotPositionAndMode = getKey.getKeyByCamelotPositionAndMode;
-const getKeyByPitchClassAndMode = getKey.getKeyByPitchClassAndMode;
+const keyModule = require("./get-key");
+const getKey = keyModule.getKey;
 
 const getCamelotRoute = (startKey, targetKey) => {
-  const beginningPosition = getKeyByPitchClassAndMode(
-    startKey.pitchClass,
-    startKey.mode
-  );
+  const beginningPosition = getKey({
+    pitchClass: startKey.pitchClass,
+    mode: startKey.mode
+  });
 
-  const endPosition = getKeyByPitchClassAndMode(
-    targetKey.pitchClass,
-    targetKey.mode
-  );
+  const endPosition = getKey({
+    pitchClass: targetKey.pitchClass,
+    mode: targetKey.mode
+  });
 
   if (withinReachOfTarget(beginningPosition, endPosition)) return [];
 
@@ -25,14 +24,20 @@ const getCamelotRoute = (startKey, targetKey) => {
     shouldGoClockwise
   );
 
-  let nextKey = getKeyByCamelotPositionAndMode(nextPosition, startKey.mode);
+  let nextKey = getKey({
+    camelotPosition: nextPosition,
+    mode: startKey.mode
+  });
 
   let keysOnRoute = [];
 
   while (!withinReachOfTarget(nextKey, endPosition)) {
     keysOnRoute.push(nextKey);
     nextPosition = changeCamelotNumber(nextPosition, shouldGoClockwise);
-    nextKey = getKeyByCamelotPositionAndMode(nextPosition, nextKey.mode);
+    nextKey = getKey({
+      camelotPosition: nextPosition,
+      mode: nextKey.mode
+    });
   }
 
   keysOnRoute.push(nextKey);

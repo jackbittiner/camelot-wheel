@@ -1,10 +1,10 @@
-const getKey = require("./get-key");
+const getKeyModule = require("./get-key");
 const camelotWheel = require("./data");
 const harmonicKeys = camelotWheel.harmonicKeys;
-const getKeyByPitchClassAndMode = getKey.getKeyByPitchClassAndMode;
+const getKey = getKeyModule.getKey;
 
 const getHarmonicKeys = (pitchClass, mode) => {
-  const keyName = getKeyByPitchClassAndMode(pitchClass, mode);
+  const keyName = getKey({ pitchClass, mode });
   return harmonicKeys[keyName.name];
 };
 
