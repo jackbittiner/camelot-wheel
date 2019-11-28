@@ -2,15 +2,9 @@ const keyModule = require("./get-key");
 const getKey = keyModule.getKey;
 
 const getCamelotRoute = (startKey, targetKey) => {
-  const beginningPosition = getKey({
-    pitchClass: startKey.pitchClass,
-    mode: startKey.mode
-  });
+  const beginningPosition = getKey(startKey);
 
-  const endPosition = getKey({
-    pitchClass: targetKey.pitchClass,
-    mode: targetKey.mode
-  });
+  const endPosition = getKey(targetKey);
 
   if (withinReachOfTarget(beginningPosition, endPosition)) return [];
 
@@ -26,7 +20,7 @@ const getCamelotRoute = (startKey, targetKey) => {
 
   let nextKey = getKey({
     camelotPosition: nextPosition,
-    mode: startKey.mode
+    mode: beginningPosition.mode
   });
 
   let keysOnRoute = [];
