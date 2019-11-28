@@ -108,6 +108,31 @@ getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
 //    ]
 ```
 
+```javascript
+import { getCamelotRoute } from "camelot-wheel";
+
+getCamelotRoute(
+  { camelotPosition: 7, mode: 1 },
+  { camelotPosition: 11, mode: 1 }
+);
+// => [
+//      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
+//      { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
+//      { name: "D", pitchClass: 2, mode: 1, camelotPosition: 10 }
+//    ]
+```
+
+```javascript
+import { getCamelotRoute } from "camelot-wheel";
+
+getCamelotRoute({ name: "F" }, { name: "A" });
+// => [
+//      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
+//      { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
+//      { name: "D", pitchClass: 2, mode: 1, camelotPosition: 10 }
+//    ]
+```
+
 ### Run the Tests
 
 ```
