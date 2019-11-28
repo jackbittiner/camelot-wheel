@@ -14,22 +14,20 @@ In lay terms: The Circle of Fifths is a music theory diagram for finding the key
 
 ### The Camelot Wheel
 
-![camelot-wheel](./assets/camelotwheel.png)
+![camelot-wheel](./assets/camelot-wheel.jpg)
 
 Now what is going on here?
 
 - Each number represents a key as stated above.
 - The outside of the wheel represents the Major mode and the inside of the wheel represents the Minor mode.
 - A track's key is considered compatible with another if it's positioned next to it or opposite it.
-- For example the key of C (1d) is compatible with F (12d), G (2d) and Am (1m)
+- For example the key of C (8B) is compatible with F (7B), G (9B) and Am (8A)
 
 # API
 
 - getKey
 - getHarmonicKeys
 - getCamelotRoute
-
-It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys by position in the camelot wheel, get keys by pitch class and mode, get harmonically related keys, and get a suggested route through harmonically related keys, from key A to key B.
 
 ## getKey(args)
 
@@ -39,14 +37,12 @@ This function will return all details about the key in question. You can pass it
 import { getKey } from "camelot-wheel";
 
 getKey({ name: "B" }); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
-getKey({ name: "Fm" }); // ==> { name: "Fm", pitchClass: 5, mode: 0, camelotPosition: 4 }
 ```
 
 ```javascript
 import { getKey } from "camelot-wheel";
 
 getKey({ pitchClass: 0, mode: 1 }); // ==> { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
-getKey({ pitchClass: 0, mode: 0 }); // ==> { name: "Cm", pitchClass: 0, mode: 0, camelotPosition: 5 }
 ```
 
 ```javascript
