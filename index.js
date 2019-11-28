@@ -4,6 +4,8 @@ const getCamelotRoute = require("./src/get-camelot-route");
 
 module.exports = {
   getKey: keyModule.getKey,
-  getHarmonicKeys: getHarmonicKeys.getHarmonicKeys,
+  getHarmonicKeysByPitchClassAndMode:
+    getHarmonicKeys.getHarmonicKeysByPitchClassAndMode,
+  getHarmonicKeysByName: getHarmonicKeys.getHarmonicKeysByName,
   getCamelotRoute: getCamelotRoute.getCamelotRoute
 };

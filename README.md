@@ -26,7 +26,8 @@ Now what is going on here?
 ### API
 
 - getKey
-- getHarmonicKeys
+- getHarmonicKeysByPitchClassAndMode
+- getHarmonicKeysByName
 - getCamelotRoute
 
 It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys by position in the camelot wheel, get keys by pitch class and mode, get harmonically related keys, and get a suggested route through harmonically related keys, from key A to key B.
@@ -55,14 +56,26 @@ import { getKey } from "camelot-wheel";
 getKey({ caemlotPosition: 8, mode: 1 }); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 ```
 
-## getHarmonicKeys(pitchClass, mode)
-
-This function will return the harmonic keys for the stated key.
+##### getHarmonicKeysByPitchClassAndMode(pitchClass, mode)
 
 ```javascript
-import { getHarmonicKeys } from "camelot-wheel";
+import { getHarmonicKeysByPitchClassAndMode } from "camelot-wheel";
 
-getHarmonicKeys(0, 1);
+getHarmonicKeysByPitchClassAndMode(0, 1);
+// =>    [
+//         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
+//         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
+//         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
+//         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
+//       ]
+```
+
+##### getHarmonicKeysByName(name)
+
+```javascript
+import { getHarmonicKeysByName } from "camelot-wheel";
+
+getHarmonicKeysByName("C");
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },

@@ -1,6 +1,6 @@
 {
   "name": "camelot-wheel",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A package to help with logic regarding the camelot wheel / circle of fifths",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,5 @@
   "devDependencies": {
     "jest": "^24.9.0"
   },
-  "homepage": "https://github.com/jackbittiner/camelot-wheel",
-  "dependencies": {
-    "user": "0.0.0"
-  }
+  "homepage": "https://github.com/jackbittiner/camelot-wheel"
 }
