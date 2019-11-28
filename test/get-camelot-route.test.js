@@ -396,4 +396,21 @@ describe("getCamelotRoute", function() {
       ]);
     });
   });
+  describe("can route between two different inputs", function() {
+    it("should return the route from start key to end key", function() {
+      const startKey = {
+        pitchClass: 5,
+        mode: 1
+      };
+      const targetKey = {
+        name: "A"
+      };
+
+      expect(getCamelotRoute(startKey, targetKey)).toEqual([
+        { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
+        { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
+        { name: "D", pitchClass: 2, mode: 1, camelotPosition: 10 }
+      ]);
+    });
+  });
 });
