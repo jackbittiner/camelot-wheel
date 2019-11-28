@@ -1,17 +1,16 @@
-const getHarmonicKeys = require("../src/get-harmonic-keys");
+const harmonicKeyModule = require("../src/get-harmonic-keys");
+const getHarmonicKeys = harmonicKeyModule.getHarmonicKeys;
 
 describe("getHarmonicKeys", function() {
-  describe("getHarmonicKeysByPitchClassAndMode", function() {
+  describe("by pitch class and mode", function() {
     it("should return the harmonic key details from the pitch class and mode", function() {
-      const getHarmonicKeysByPitchClassAndMode =
-        getHarmonicKeys.getHarmonicKeysByPitchClassAndMode;
-      expect(getHarmonicKeysByPitchClassAndMode(0, 1)).toEqual([
+      expect(getHarmonicKeys({ pitchClass: 0, mode: 1 })).toEqual([
         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
       ]);
-      expect(getHarmonicKeysByPitchClassAndMode(4, 0)).toEqual([
+      expect(getHarmonicKeys({ pitchClass: 4, mode: 0 })).toEqual([
         { camelotPosition: 9, mode: 0, name: "Em", pitchClass: 4 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 },
         { camelotPosition: 10, mode: 0, name: "Bm", pitchClass: 11 },
@@ -19,17 +18,15 @@ describe("getHarmonicKeys", function() {
       ]);
     });
   });
-  describe("getHarmonicKeysByName", function() {
+  describe("by camelot position", function() {
     it("should return the harmonic key details from the pitch class and mode", function() {
-      const getHarmonicKeysByCamelotPositionAndMode =
-        getHarmonicKeys.getHarmonicKeysByCamelotPositionAndMode;
-      expect(getHarmonicKeysByCamelotPositionAndMode(8, 1)).toEqual([
+      expect(getHarmonicKeys({ camelotPosition: 8, mode: 1 })).toEqual([
         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
       ]);
-      expect(getHarmonicKeysByCamelotPositionAndMode(9, 0)).toEqual([
+      expect(getHarmonicKeys({ camelotPosition: 9, mode: 0 })).toEqual([
         { camelotPosition: 9, mode: 0, name: "Em", pitchClass: 4 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 },
         { camelotPosition: 10, mode: 0, name: "Bm", pitchClass: 11 },
@@ -37,16 +34,15 @@ describe("getHarmonicKeys", function() {
       ]);
     });
   });
-  describe("getHarmonicKeysByCamelotPositionAndMode", function() {
+  describe("by name", function() {
     it("should return the key details from the camelot position and mode", function() {
-      const getHarmonicKeysByName = getHarmonicKeys.getHarmonicKeysByName;
-      expect(getHarmonicKeysByName("C")).toEqual([
+      expect(getHarmonicKeys({ name: "C" })).toEqual([
         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
       ]);
-      expect(getHarmonicKeysByName("Em")).toEqual([
+      expect(getHarmonicKeys({ name: "Em" })).toEqual([
         { camelotPosition: 9, mode: 0, name: "Em", pitchClass: 4 },
         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 },
         { camelotPosition: 10, mode: 0, name: "Bm", pitchClass: 11 },
