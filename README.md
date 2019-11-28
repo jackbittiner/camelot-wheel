@@ -23,11 +23,10 @@ Now what is going on here?
 - A track's key is considered compatible with another if it's positioned next to it or opposite it.
 - For example the key of C (1d) is compatible with F (12d), G (2d) and Am (1m)
 
-### API
+# API
 
 - getKey
-- getHarmonicKeysByPitchClassAndMode
-- getHarmonicKeysByName
+- getHarmonicKeys
 - getCamelotRoute
 
 It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys by position in the camelot wheel, get keys by pitch class and mode, get harmonically related keys, and get a suggested route through harmonically related keys, from key A to key B.
@@ -56,12 +55,12 @@ import { getKey } from "camelot-wheel";
 getKey({ caemlotPosition: 8, mode: 1 }); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 ```
 
-##### getHarmonicKeysByPitchClassAndMode(pitchClass, mode)
+## getHarmonicKeys
 
 ```javascript
-import { getHarmonicKeysByPitchClassAndMode } from "camelot-wheel";
+import { getHarmonicKeys } from "camelot-wheel";
 
-getHarmonicKeysByPitchClassAndMode(0, 1);
+getHarmonicKeys({ pitchClass: 0, mode: 1 });
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
@@ -70,12 +69,22 @@ getHarmonicKeysByPitchClassAndMode(0, 1);
 //       ]
 ```
 
-##### getHarmonicKeysByName(name)
+```javascript
+import { getHarmonicKeys } from "camelot-wheel";
+
+getHarmonicKeys({ name: "C" });
+// =>    [
+//         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
+//         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
+//         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
+//         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
+//       ]
+```
 
 ```javascript
-import { getHarmonicKeysByName } from "camelot-wheel";
+import { getHarmonicKeys } from "camelot-wheel";
 
-getHarmonicKeysByName("C");
+getHarmonicKeys({ caemlotPosition: 8, mode: 1 });
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
