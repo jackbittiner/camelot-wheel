@@ -6,6 +6,8 @@ module.exports = {
   getKeyByName: getKey.getKeyByName,
   getKeyByPitchClassAndMode: getKey.getKeyByPitchClassAndMode,
   getKeyByCamelotPositionAndMode: getKey.getKeyByCamelotPositionAndMode,
-  getHarmonicKeys: getHarmonicKeys.getHarmonicKeys,
+  getHarmonicKeysByPitchClassAndMode:
+    getHarmonicKeys.getHarmonicKeysByPitchClassAndMode,
+  getHarmonicKeysByName: getHarmonicKeys.getHarmonicKeysByName,
   getCamelotRoute: getCamelotRoute.getCamelotRoute
 };

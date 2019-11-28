@@ -36,16 +36,16 @@ It's easy to use Camelot-Wheel APIs to navigate the circle of fifths, get keys b
 ##### getKeyByName(name)
 
 ```javascript
-import { getKeyByName } from "camelot-wheel";
+import { getKeyByName } from 'camelot-wheel';
 
-getKeyByName("B"); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
-getKeyByName("Fm"); // ==> { name: "Fm", pitchClass: 5, mode: 0, camelotPosition: 4 }
+getKeyByName('B'); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
+getKeyByName('Fm'); // ==> { name: "Fm", pitchClass: 5, mode: 0, camelotPosition: 4 }
 ```
 
 ##### getKeyByPitchClassAndMode(pitchClass, mode)
 
 ```javascript
-import { getKgetKeyByPitchClassAndModeeyByName } from "camelot-wheel";
+import { getKgetKeyByPitchClassAndModeeyByName } from 'camelot-wheel';
 
 getKeyByPitchClassAndMode(0, 1); // ==> { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 getKeyByPitchClassAndMode(0, 0); // ==> { name: "Cm", pitchClass: 0, mode: 0, camelotPosition: 5 }
@@ -54,17 +54,31 @@ getKeyByPitchClassAndMode(0, 0); // ==> { name: "Cm", pitchClass: 0, mode: 0, ca
 ##### getKeyByCamelotPositionAndMode(camelotPosition, mode)
 
 ```javascript
-import { getKeyByCamelotPositionAndMode } from "camelot-wheel";
+import { getKeyByCamelotPositionAndMode } from 'camelot-wheel';
 
 getKeyByCamelotPositionAndMode(8, 1); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 ```
 
-##### getHarmonicKeys(pitchClass, mode)
+##### getHarmonicKeysByPitchClassAndMode(pitchClass, mode)
 
 ```javascript
-import { getHarmonicKeys } from "camelot-wheel";
+import { getHarmonicKeysByPitchClassAndMode } from 'camelot-wheel';
 
-getHarmonicKeys(0, 1);
+getHarmonicKeysByPitchClassAndMode(0, 1);
+// =>    [
+//         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
+//         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
+//         { camelotPosition: 9, mode: 1, name: "G", pitchClass: 7 },
+//         { camelotPosition: 8, mode: 0, name: "Am", pitchClass: 9 }
+//       ]
+```
+
+##### getHarmonicKeysByName(name)
+
+```javascript
+import { getHarmonicKeysByName } from 'camelot-wheel';
+
+getHarmonicKeysByName('C');
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
@@ -76,7 +90,7 @@ getHarmonicKeys(0, 1);
 ##### getCamelotRoute(startKey, targetKey)
 
 ```javascript
-import { getCamelotRoute } from "camelot-wheel";
+import { getCamelotRoute } from 'camelot-wheel';
 
 getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
 // => [
