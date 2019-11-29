@@ -34,27 +34,27 @@ Now what is going on here?
 This function will return all details about the key in question. You can pass it a key name, or the camelot position (with mode) or the pitch class (with mode)
 
 ```javascript
-import { getKey } from "camelot-wheel";
+import { getKey } from 'camelot-wheel';
 
-getKey({ name: "B" }); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
+getKey({ name: 'B' }); // ==> { name: "B", pitchClass: 11, mode: 1, camelotPosition: 1 }
 ```
 
 ```javascript
-import { getKey } from "camelot-wheel";
+import { getKey } from 'camelot-wheel';
 
 getKey({ pitchClass: 0, mode: 1 }); // ==> { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 ```
 
 ```javascript
-import { getKey } from "camelot-wheel";
+import { getKey } from 'camelot-wheel';
 
-getKey({ caemlotPosition: 8, mode: 1 }); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
+getKey({ camelotPosition: 8, mode: 1 }); // => { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 }
 ```
 
 ## getHarmonicKeys
 
 ```javascript
-import { getHarmonicKeys } from "camelot-wheel";
+import { getHarmonicKeys } from 'camelot-wheel';
 
 getHarmonicKeys({ pitchClass: 0, mode: 1 });
 // =>    [
@@ -66,9 +66,9 @@ getHarmonicKeys({ pitchClass: 0, mode: 1 });
 ```
 
 ```javascript
-import { getHarmonicKeys } from "camelot-wheel";
+import { getHarmonicKeys } from 'camelot-wheel';
 
-getHarmonicKeys({ name: "C" });
+getHarmonicKeys({ name: 'C' });
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
@@ -78,9 +78,9 @@ getHarmonicKeys({ name: "C" });
 ```
 
 ```javascript
-import { getHarmonicKeys } from "camelot-wheel";
+import { getHarmonicKeys } from 'camelot-wheel';
 
-getHarmonicKeys({ caemlotPosition: 8, mode: 1 });
+getHarmonicKeys({ camelotPosition: 8, mode: 1 });
 // =>    [
 //         { camelotPosition: 8, mode: 1, name: "C", pitchClass: 0 },
 //         { camelotPosition: 7, mode: 1, name: "F", pitchClass: 5 },
@@ -94,7 +94,7 @@ getHarmonicKeys({ caemlotPosition: 8, mode: 1 });
 This function will navigate you from the startKey to the endKey as quickly as possible.
 
 ```javascript
-import { getCamelotRoute } from "camelot-wheel";
+import { getCamelotRoute } from 'camelot-wheel';
 
 getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
 // => [
@@ -105,7 +105,7 @@ getCamelotRoute({ pitchClass: 5, mode: 1 }, { pitchClass: 9, mode: 1 });
 ```
 
 ```javascript
-import { getCamelotRoute } from "camelot-wheel";
+import { getCamelotRoute } from 'camelot-wheel';
 
 getCamelotRoute(
   { camelotPosition: 7, mode: 1 },
@@ -119,9 +119,9 @@ getCamelotRoute(
 ```
 
 ```javascript
-import { getCamelotRoute } from "camelot-wheel";
+import { getCamelotRoute } from 'camelot-wheel';
 
-getCamelotRoute({ name: "F" }, { name: "A" });
+getCamelotRoute({ name: 'F' }, { name: 'A' });
 // => [
 //      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
 //      { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
@@ -130,9 +130,9 @@ getCamelotRoute({ name: "F" }, { name: "A" });
 ```
 
 ```javascript
-import { getCamelotRoute } from "camelot-wheel";
+import { getCamelotRoute } from 'camelot-wheel';
 
-getCamelotRoute({ name: "F" }, { camelotPosition: 11, mode: 1 });
+getCamelotRoute({ name: 'F' }, { camelotPosition: 11, mode: 1 });
 // => [
 //      { name: "C", pitchClass: 0, mode: 1, camelotPosition: 8 },
 //      { name: "G", pitchClass: 7, mode: 1, camelotPosition: 9 },
