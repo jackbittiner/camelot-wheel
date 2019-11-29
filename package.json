@@ -1,11 +1,12 @@
 {
   "name": "camelot-wheel",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A package to help with logic regarding the camelot wheel / circle of fifths",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "keywords": [
     "camelot",
@@ -26,6 +27,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
+    "auto-changelog": "^1.16.2",
     "jest": "^24.9.0"
   },
   "homepage": "https://github.com/jackbittiner/camelot-wheel"
