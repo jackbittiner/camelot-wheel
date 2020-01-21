@@ -1,5 +1,4 @@
-const harmonicKeyModule = require("../src/get-harmonic-keys");
-const getHarmonicKeys = harmonicKeyModule.getHarmonicKeys;
+const { getHarmonicKeys } = require("../src/get-harmonic-keys");
 
 describe("getHarmonicKeys", function() {
   describe("by pitch class and mode", function() {

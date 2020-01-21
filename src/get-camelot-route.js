@@ -1,5 +1,4 @@
-const keyModule = require("./get-key");
-const getKey = keyModule.getKey;
+const { getKey } = require("./get-key");
 
 const getCamelotRoute = (startKey, targetKey) => {
   const beginningPosition = getKey(startKey);

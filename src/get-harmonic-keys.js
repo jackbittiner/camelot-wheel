@@ -1,7 +1,5 @@
-const getKeyModule = require("./get-key");
-const camelotWheel = require("./data");
-const harmonicKeys = camelotWheel.harmonicKeys;
-const getKey = getKeyModule.getKey;
+const { getKey } = require("./get-key");
+const { harmonicKeys } = require("./data");
 
 const getHarmonicKeys = key => {
   if ("name" in key) {

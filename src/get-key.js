@@ -1,5 +1,4 @@
-const CamelotWheel = require("./data.js");
-const allKeys = CamelotWheel.allKeys;
+const { allKeys } = require("./data.js");
 
 const getKey = key => {
   if ("name" in key) {

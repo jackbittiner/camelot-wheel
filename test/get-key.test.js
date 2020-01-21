@@ -1,5 +1,4 @@
-const keyModule = require("../src/get-key");
-const getKey = keyModule.getKey;
+const { getKey } = require("../src/get-key");
 
 describe("getKey", function() {
   describe("By Pitch Class And Mode", function() {

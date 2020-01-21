@@ -1,7 +1,6 @@
-const camelotRoute = require("../src/get-camelot-route");
+const { getCamelotRoute } = require("../src/get-camelot-route");
 
 describe("getCamelotRoute", function() {
-  const getCamelotRoute = camelotRoute.getCamelotRoute;
   describe("by pitchclass and mode", function() {
     it("should return the route from start key to end key", function() {
       const startKey = {
